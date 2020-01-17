@@ -9,8 +9,8 @@ module.exports = {
   mode: 'development',
   entry: './src/main.js',
   output: {
-    publicPath: '/dist/',
-    path: path.resolve(__dirname, './dist'),
+    publicPath: './',
+    path: path.resolve(__dirname, './dist/'),
     filename: '[name].[hash].bundle.js',
   },
   module: {
@@ -24,7 +24,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      filename: '../index.html',
+      filename: './index.html',
       template: 'index.template.html',
     }),
     new VueLoaderPlugin(),
