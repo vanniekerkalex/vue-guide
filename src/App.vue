@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <h1>Hello World!</h1>
+    <h1>{{ title }}</h1>
     <div>
       <router-link to="/">Go to root!</router-link>
       <router-link to="/firstPage">Go to FirstPage</router-link>
@@ -9,3 +9,11 @@
     <router-view></router-view>
   </div>
 </template>
+
+<script>
+import { mapState } from 'vuex';
+
+export default {
+  computed: mapState(['title']),
+};
+</script>
