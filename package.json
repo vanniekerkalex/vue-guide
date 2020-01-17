@@ -1,0 +1,19 @@
+{
+  "name": "vue-guide",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/vanniekerkalex/vue-guide.git",
+  "author": "Alex van Niekerk <vanniekerk.alex@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "clean-webpack-plugin": "^3.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "vue-loader": "^15.8.3",
+    "vue-template-compiler": "^2.6.11",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10"
+  },
+  "dependencies": {
+    "vue": "^2.6.11"
+  }
+}
