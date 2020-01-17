@@ -2,7 +2,7 @@
   <div id="app">
     <h1>{{ title }}</h1>
     <div>
-      <router-link to="/">Go to root!</router-link>
+      <router-link to="/">Go to Root</router-link>
       <router-link to="/firstPage">Go to FirstPage</router-link>
       <router-link to="/secondPage">Go to SecondPage</router-link>
     </div>

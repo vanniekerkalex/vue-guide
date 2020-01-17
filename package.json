@@ -6,8 +6,10 @@
   "author": "Alex van Niekerk <vanniekerk.alex@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev:build": "webpack --config webpack.config.dev.js --color --verbose --progress --watch",
-    "dev:server": "NODE_ENV=development nodemon -w server server/index.js"
+    "dev": "NODE_ENV=development nodemon -w server server/index.js",
+    "prod": "yarn prod:build && yarn prod:server",
+    "prod:build": "webpack --config webpack.config.prod.js --color --verbose --progress",
+    "prod:server": "NODE_ENV=production node server/index.js"
   },
   "devDependencies": {
     "clean-webpack-plugin": "^3.0.0",
@@ -17,7 +19,10 @@
     "vue-router": "^3.1.5",
     "vue-template-compiler": "^2.6.11",
     "webpack": "^4.41.5",
-    "webpack-cli": "^3.3.10"
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-middleware": "^3.7.2",
+    "webpack-hot-middleware": "^2.25.0",
+    "webpack-merge": "^4.2.2"
   },
   "dependencies": {
     "koa": "^2.11.0",

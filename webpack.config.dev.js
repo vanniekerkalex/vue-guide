@@ -1,32 +1,18 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const {
+  HotModuleReplacementPlugin,
+  NoEmitOnErrorsPlugin
+} = require('webpack');
 
-const VueLoaderPlugin = require('vue-loader/lib/plugin');
+const base = require('./webpack.config.base.js');
+const merge = require('webpack-merge');
 
-const path = require('path');
-
-module.exports = {
+module.exports = merge(base, {
   mode: 'development',
-  entry: './src/main.js',
-  output: {
-    publicPath: './dist/',
-    path: path.resolve(__dirname, './dist/'),
-    filename: '[name].[hash].bundle.js',
-  },
-  module: {
-    rules: [
-      {
-        test: /\.vue$/,
-        loader: 'vue-loader',
-      },
-    ],
-  },
-  plugins: [
-    new CleanWebpackPlugin(),
-    new HtmlWebpackPlugin({
-      filename: '../index.html',
-      template: 'index.template.html',
-    }),
-    new VueLoaderPlugin(),
+  entry: [
+    'webpack-hot-middleware/client',
   ],
-};
+  plugins: [
+    new HotModuleReplacementPlugin(),
+    new NoEmitOnErrorsPlugin(),
+  ],
+});
