@@ -5,6 +5,9 @@
   "repository": "https://github.com/vanniekerkalex/vue-guide.git",
   "author": "Alex van Niekerk <vanniekerk.alex@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "dev": "webpack --config webpack.config.dev.js --color --verbose --progress --watch"
+  },
   "devDependencies": {
     "clean-webpack-plugin": "^3.0.0",
     "html-webpack-plugin": "^3.2.0",
